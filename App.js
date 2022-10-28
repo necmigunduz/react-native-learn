@@ -1,29 +1,42 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
-import dice from './assets/dice.png'
+import Characters from './components/Characters';
+import Dice from './assets/dice.png';
+
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.dummyText}>Create your first React Native App</Text>
-      <Image source={dice} width={200} height={200} style={styles.image} />
+      <Image
+        source={{uri: 'https://images7.alphacoders.com/751/751400.png'}}
+        alt="rickandmorty"
+        style={styles.image}
+      />
+      <Text style={styles.dummyText}>Rick and Morty Homepage</Text>
+      <Characters style={styles.chars} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: '40%',
+    marginLeft: '25%',
   },
   dummyText: {
     color: 'red',
     fontWeight: 'bold',
     fontSize: 30,
-    textAlign: 'center',
-    marginLeft: '10%',
+    padding: '3%',
+  },
+  chars: {
+    fontWeight: 'bold',
   },
   image: {
-    marginLeft: '10%',
+    marginTop: 50,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 50,
+    width: 400,
+    height: 200,
   },
 });
 
