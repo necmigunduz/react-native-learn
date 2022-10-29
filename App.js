@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderBottomColor: 'gray',
     borderBottomWidth: 15,
+    borderStyle: 'dotted',
   },
   image: {
     marginTop: 20,
