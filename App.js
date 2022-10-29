@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import Characters from './components/Characters';
-import Dice from './assets/dice.png';
 
 const App = () => {
   return (
@@ -9,7 +8,7 @@ const App = () => {
       <Image
         source={{uri: 'https://images7.alphacoders.com/751/751400.png'}}
         alt="rickandmorty"
-        style={styles.image}
+        style={styles.topImage}
       />
       <Text style={styles.header}>Rick and Morty Characters</Text>
       <Characters />
@@ -21,32 +20,30 @@ const styles = StyleSheet.create({
   container: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    backgroundColor: 'lightblue',
-    marginTop: 20,
-    borderRadius: 20,
-    padding: 40,
+    backgroundColor: 'black',
+    marginTop: 15,
+    borderRadius: 10,
+    padding: 50,
+    top: -55,
+    width: '100%',
   },
   header: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 30,
-    padding: 10,
+    fontSize: 20,
+    padding: 5,
     textAlign: 'center',
     borderBottomColor: 'gray',
-    borderBottomWidth: 15,
+    borderBottomWidth: 1,
     borderStyle: 'dotted',
   },
-  image: {
-    marginTop: 20,
-    borderWidth: 5,
-    borderColor: 'black',
-    borderStyle: 'ridge',
-    borderRadius: 10,
-    width: 150,
-    height: 100,
-    marginLeft:'auto',
+  topImage: {
+    width: 120,
+    height: 90,
+    borderRadius: 50,
+    marginLeft: 'auto',
     marginRight: 'auto',
-  },
+  }
 });
 
 export default App;

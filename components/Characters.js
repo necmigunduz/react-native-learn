@@ -15,47 +15,55 @@ const Characters = () => {
 
   return (
     <ScrollView>
-      {chars.map(char => (
-        <View key={char.id}>
-          <Text key={char.id} style={styles.text}>
-            {char.name}
-          </Text>
-          {char.image ? (
-            <Image
-              source={{uri: char.image}}
-              key={char.name}
-              style={styles.image}
-            />
-          ) : (
-            <Text style={styles.text}>No image found.</Text>
-          )}
-        </View>
-      ))}
+      <View style={styles.container}>
+        {chars.map(char => (
+          <>
+            <View key={char.id}>
+              {char.image ? (
+                <Image
+                  source={{uri: char.image}}
+                  key={char.name}
+                  style={styles.image}
+                />
+              ) : (
+                <Text style={styles.text}>No image found.</Text>
+              )}
+              <Text style={styles.text}>{char.name}</Text>
+            </View>
+          </>
+        ))}
+      </View>
     </ScrollView>
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 30,
+  },
   image: {
-    width: 150,
-    height: 150,
-    borderColor: 'black',
+    borderColor: 'white',
+    borderWidth: 2,
+    width: 250,
+    height: 280,
     borderRadius: 80,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
   text: {
     fontWeight: 'bold',
-    fontSize: 20,
-    padding: 10,
+    fontSize: 12,
     color: 'white',
-    backgroundColor: 'lightgray',
-    width: 200,
+    backgroundColor: 'darkblue',
+    width: 220,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 30,
     marginBottom: 30,
-    borderRadius: 40,
+    marginTop: 5,
     textAlign: 'center',
+    letterSpacing: 2,
+    paddingTop: 5,
+    paddingBottom: 5,
+    borderRadius: 50,
   },
 });
 export default Characters;
