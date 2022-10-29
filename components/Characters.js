@@ -17,12 +17,18 @@ const Characters = () => {
     <ScrollView>
       {chars.map(char => (
         <View key={char.id}>
-          <Text key={char.id} style={styles.text}>{char.name}</Text>
-          <Image
-            source={{uri: char.image}}
-            key={char.name}
-            style={styles.image}
-          />
+          <Text key={char.id} style={styles.text}>
+            {char.name}
+          </Text>
+          {char.image ? (
+            <Image
+              source={{uri: char.image}}
+              key={char.name}
+              style={styles.image}
+            />
+          ) : (
+            <Text style={styles.text}>No image found.</Text>
+          )}
         </View>
       ))}
     </ScrollView>
@@ -30,21 +36,25 @@ const Characters = () => {
 };
 const styles = StyleSheet.create({
   image: {
-    width: 300,
-    height: 300,
+    width: 150,
+    height: 150,
     borderColor: 'black',
     borderRadius: 80,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   text: {
     fontWeight: 'bold',
-    fontSize: 30,
-    padding: 20,
+    fontSize: 20,
+    padding: 10,
     color: 'white',
     backgroundColor: 'lightgray',
-    width: 300,
+    width: 200,
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginTop: 30,
     marginBottom: 30,
-    borderRadius: 50,
+    borderRadius: 40,
     textAlign: 'center',
   },
 });

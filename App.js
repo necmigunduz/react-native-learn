@@ -11,32 +11,40 @@ const App = () => {
         alt="rickandmorty"
         style={styles.image}
       />
-      <Text style={styles.dummyText}>Rick and Morty Homepage</Text>
-      <Characters style={styles.chars} />
+      <Text style={styles.header}>Rick and Morty Characters</Text>
+      <Characters />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: '25%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: 'lightblue',
+    marginTop: 20,
+    borderRadius: 20,
+    padding: 40,
   },
-  dummyText: {
-    color: 'red',
+  header: {
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 30,
-    padding: '3%',
-  },
-  chars: {
-    fontWeight: 'bold',
+    padding: 10,
+    textAlign: 'center',
+    borderBottomColor: 'gray',
+    borderBottomWidth: 15,
   },
   image: {
-    marginTop: 50,
-    borderWidth: 1,
+    marginTop: 20,
+    borderWidth: 5,
     borderColor: 'black',
-    borderRadius: 50,
-    width: 400,
-    height: 200,
+    borderStyle: 'ridge',
+    borderRadius: 10,
+    width: 150,
+    height: 100,
+    marginLeft:'auto',
+    marginRight: 'auto',
   },
 });
 
